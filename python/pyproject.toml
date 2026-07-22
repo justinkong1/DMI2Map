@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dmi2map"
+version = "1.0.0"
+description = "Local PNG/DMI to BYOND .dmm + tileset converter"
+requires-python = ">=3.10"
+dependencies = [
+  "Pillow>=10.0.0",
+  "fastapi>=0.110.0",
+  "uvicorn[standard]>=0.27.0",
+]
+
+[project.scripts]
+dmi2map = "dmi2map.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dmi2map*"]

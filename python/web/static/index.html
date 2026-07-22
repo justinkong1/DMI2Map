@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DMI2Map</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div>
+        <h1>DMI2Map</h1>
+        <p class="tagline">PNG / DMI → BYOND .dmm + tileset</p>
+      </div>
+      <p class="root" id="rootPath">…</p>
+    </header>
+
+    <section class="panel">
+      <h2>1. Tileset</h2>
+      <div class="row">
+        <select id="tilesetSelect"></select>
+        <button type="button" id="btnLoadTileset">Load</button>
+      </div>
+      <div class="row">
+        <input type="text" id="newTilesetName" placeholder="new tileset name" />
+        <button type="button" id="btnNewTileset">Create new</button>
+      </div>
+      <p class="status" id="tilesetStatus">No tileset set</p>
+    </section>
+
+    <section class="panel">
+      <h2>2. Convert</h2>
+      <div class="row tabs">
+        <label><input type="radio" name="source" value="png" checked /> PNG/</label>
+        <label><input type="radio" name="source" value="dmi" /> DMI/</label>
+        <label class="check"><input type="checkbox" id="duplicates" /> Always new tiles</label>
+      </div>
+      <div class="row">
+        <select id="fileSelect"></select>
+        <button type="button" id="btnConvert" class="primary">Convert</button>
+      </div>
+      <p class="hint">Folders recurse. Flow: PNG → 2× DMI → split tiles → write .dmm → save tileset</p>
+    </section>
+
+    <section class="panel">
+      <h2>3. Folders</h2>
+      <div class="row fold-btns">
+        <button type="button" data-folder="PNG">PNG/</button>
+        <button type="button" data-folder="DMI">DMI/</button>
+        <button type="button" data-folder="Maps">Maps/</button>
+        <button type="button" data-folder="Tilesets">Tilesets/</button>
+      </div>
+    </section>
+
+    <section class="panel log-panel">
+      <div class="log-head">
+        <h2>Progress</h2>
+        <span id="busyBadge" class="badge hidden">Running…</span>
+      </div>
+      <pre id="log" class="log"></pre>
+    </section>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -13,3 +13,12 @@ map.dmm
 TestIcon.dmi
 /Old
 /PNG
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+python/.venv/
+*.egg-info/
+.pytest_cache/
+/_parity_test
+
