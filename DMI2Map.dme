@@ -16,7 +16,6 @@
 // BEGIN_INCLUDE
 #include "DMI2Map.dm"
 #include "DMIFix.dm"
-#include "DMIVariables.dm"
-#include "Statpanel.dm"
+#include "map.dmm"
 // END_INCLUDE
 
