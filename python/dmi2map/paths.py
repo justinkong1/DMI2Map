@@ -4,8 +4,17 @@ from __future__ import annotations
 
 from pathlib import Path
 
+# python/dmi2map/paths.py → python/workspace/
+DEFAULT_WORKSPACE = Path(__file__).resolve().parents[1] / "workspace"
+
+
+def default_workspace() -> Path:
+    """Dedicated Python app data root (not the BYOND project folder)."""
+    return DEFAULT_WORKSPACE
+
 
 def ensure_workspace(root: Path) -> None:
+    root.mkdir(parents=True, exist_ok=True)
     for name in ("PNG", "DMI", "Maps", "Tilesets"):
         (root / name).mkdir(parents=True, exist_ok=True)
 

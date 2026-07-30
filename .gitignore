@@ -21,4 +21,4 @@ python/.venv/
 *.egg-info/
 .pytest_cache/
 /_parity_test
-
+python/workspace/

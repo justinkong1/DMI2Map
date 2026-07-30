@@ -12,8 +12,7 @@ from .tileset import Tileset
 
 
 def _default_root() -> Path:
-    # python/dmi2map/__main__.py → repo root is parents[2]
-    return Path(__file__).resolve().parents[2]
+    return pathutil.default_workspace()
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -26,7 +25,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--root",
         type=Path,
         default=_default_root(),
-        help="Workspace root containing PNG/, DMI/, Maps/, Tilesets/ (default: repo root)",
+        help="Workspace root containing PNG/, DMI/, Maps/, Tilesets/ (default: python/workspace)",
     )
 
     sub = p.add_subparsers(dest="command", required=True)
